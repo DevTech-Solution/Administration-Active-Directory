@@ -1,55 +1,81 @@
 # 🛠️ Administration Active Directory via Powershell
 
-## Description
+## 🇫🇷 Description
 
 `Administration.ps1` est un script PowerShell conçu pour automatiser diverses tâches d'administration système sur les postes Windows. Il centralise plusieurs fonctions utiles pour la gestion, l'analyse, le nettoyage ou la configuration des machines dans un environnement d'entreprise ou d'administration locale.
 
-## 📦 Fonctions incluses
+## 🇬🇧 Description
 
-Voici une liste non exhaustive des fonctionnalités prises en charge par le script :
+`Administration.ps1` is a PowerShell script designed to automate various system administration tasks on Windows machines. It consolidates several useful functions for managing, analyzing, cleaning, or configuring machines in a business or local administration environment.
 
-- 🔍 Vérification de la configuration système
-- 📂 Nettoyage des répertoires temporaires
-- 🔐 Gestion des utilisateurs et des droits
-- 📝 Analyse et journalisation des événements
-- 🖥️ Inventaire matériel et logiciel
-- 🔄 Automatisation de tâches répétitives
-- 💾 Sauvegardes/restauration de configurations
+---
 
-## 🖥️ Prérequis
+## 📦 🇫🇷 Fonctions incluses / 🇬🇧 Included Features
 
-- PowerShell 5.1 ou supérieur
-- Lancement en tant qu’administrateur pour certaines commandes
-- Politique d’exécution permettant l’exécution de scripts (`Set-ExecutionPolicy`)
+- 🔍 Vérification de la configuration système / System configuration check
+- 📂 Nettoyage des répertoires temporaires / Temporary folder cleanup
+- 🔐 Gestion des utilisateurs et des droits / User and permission management
+- 📝 Analyse et journalisation des événements / Event log analysis
+- 🖥️ Inventaire matériel et logiciel / Hardware and software inventory
+- 🔄 Automatisation de tâches répétitives / Repetitive task automation
+- 💾 Sauvegardes/restauration de configurations / Configuration backup and restore
 
-## 🚀 Utilisation
+---
 
-### 1. Cloner ce dépôt
+## 🖥️ 🇫🇷 Prérequis / 🇬🇧 Requirements
+
+- PowerShell 5.1 or later
+- Lancement en tant qu’administrateur pour certaines commandes / Run as administrator for some commands
+- Politique d’exécution permettant l’exécution de scripts (`Set-ExecutionPolicy`)  
+  / Execution policy allowing script execution (`Set-ExecutionPolicy`)
+
+---
+
+## 🚀 🇫🇷 Utilisation / 🇬🇧 Usage
+
+### 1. 🇫🇷 Cloner le dépôt / 🇬🇧 Clone the repository
 
 ```bash
 git clone https://github.com/votre-utilisateur/nom-du-repo.git
 cd nom-du-repo
 ```
 
-### 2. Exécuter le script PowerShell
+### 2. 🇫🇷 Exécuter le script / 🇬🇧 Run the script
 
 ```powershell
-# Depuis PowerShell (en mode administrateur de préférence)
+# 🇫🇷 Depuis PowerShell (en mode administrateur de préférence)
+# 🇬🇧 From PowerShell (preferably in administrator mode)
 .\Administration.ps1
 ```
 
-> 💡 Astuce : Pour automatiser l’exécution au démarrage ou à une heure définie, utilisez le planificateur de tâches Windows.
+💡 **Astuce / Tip** :  
+🇫🇷 Utilisez le planificateur de tâches Windows pour l’exécuter automatiquement  
+🇬🇧 Use Windows Task Scheduler for automated execution
 
-## 🧪 Conseils de sécurité
+---
 
-- Lisez et comprenez le script avant exécution.
-- Exécutez uniquement sur des machines de test si vous n’êtes pas certain de son comportement.
-- Sauvegardez votre système ou créez un point de restauration avant toute modification massive.
+## 🧪 🇫🇷 Conseils de sécurité / 🇬🇧 Security Tips
 
-## 📄 Licence
+- 🇫🇷 Lisez et comprenez le script avant exécution  
+  🇬🇧 Read and understand the script before running it
+- 🇫🇷 Exécutez d’abord sur une machine de test  
+  🇬🇧 Test it first on a development machine
+- 🇫🇷 Sauvegardez vos données avant modifications massives  
+  🇬🇧 Backup your data before making major changes
 
-Ce projet est sous licence [MIT](LICENSE). Vous pouvez l’utiliser, le modifier et le redistribuer librement.
+---
 
-## 🙋 Support & Contribution
+## 📄 Licence / License
 
-Les contributions sont les bienvenues ! Merci de soumettre vos idées via des issues ou des pull requests.
+Ce projet est sous licence [MIT](LICENSE).  
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙋 🇫🇷 Support & Contribution / 🇬🇧 Support & Contribution
+
+Les contributions sont les bienvenues !  
+Contributions are welcome!
+
+Merci de soumettre vos idées via des issues ou des pull requests.  
+Please submit your ideas via issues or pull requests.
