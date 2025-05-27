@@ -9,11 +9,11 @@ Clear-Host
 #######################################################################################################################################################################
 [void][System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
 [void][System.Reflection.Assembly]::LoadWithPartialName("System.Drawing")
-[void][Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')  
+[void][Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')
 #######################################################################################################################################################################
                                                                          # CACHER FENETRE POWERSHELL #
 #######################################################################################################################################################################
-PowerShell.exe -WindowStyle Hidden -File 
+PowerShell.exe -WindowStyle Hidden -File
 #######################################################################################################################################################################
                                                                               # VIDER CONSOLE #
 #######################################################################################################################################################################
@@ -22,7 +22,7 @@ Clear-Host
 ###
  ###Ajouter votre domaine
 $Domaine = "mondomaine.ad"
-$UO = "OU=Instituts-Ecoles-Departements,DC=afpicl,DC=lan" 
+$UO = "OU=Instituts-Ecoles-Departements,DC=afpicl,DC=lan"
 $Server = "ad.enterprise"
 #######################################################################################################################################################################
                                                                               # FENETRE MENU #
@@ -30,7 +30,7 @@ $Server = "ad.enterprise"
 #region FENETRE MENU
 #MENU
 $form = New-Object Windows.Forms.Form
-$form.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $form.Close() } }) 
+$form.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $form.Close() } })
 $form.KeyPreview = $true
 $form.Height = 650
 $form.Width = 400
@@ -38,7 +38,7 @@ $form.FormBorderStyle = "FixedDialog"
 $form.MaximizeBox = $false
 $form.MinimizeBox = $false
 $form.StartPosition = "CenterScreen"
-$form.FormBorderStyle = 'Fixed3D' 
+$form.FormBorderStyle = 'Fixed3D'
 $form.Text = "OUTILS D'ADMINISTRATION"
 $form.BackColor = "Lightblue"
 
@@ -75,11 +75,11 @@ $FormLabel_1.Location = New-Object System.Drawing.Point(46,112)
 $FormLabel_1.Size = New-Object System.Drawing.Size(280,15)
 $FormLabel_1.Font = New-Object System.Drawing.Font("Arial",10,[System.Drawing.FontStyle]::Bold)
 $FormLabel_1.Text = "Séléctionner votre choix :"
-$form.Controls.Add($Formlabel_1) 
+$form.Controls.Add($Formlabel_1)
 
 #Listbox
-$ListBox_1 = New-Object System.Windows.Forms.ListBox 
-$ListBox_1.Location = New-Object System.Drawing.Size(48,132) 
+$ListBox_1 = New-Object System.Windows.Forms.ListBox
+$ListBox_1.Location = New-Object System.Drawing.Size(48,132)
 $ListBox_1.Height = 400
 $ListBox_1.Width = 300
 $ListBox_1.Font = New-Object System.Drawing.Font("Arial",11,[System.Drawing.FontStyle]::Regular)
@@ -104,7 +104,7 @@ $ListBox_1.Visible = $true
 function INFORMATIONsUSERS {
 
 #region Structure
-    
+
     #Fenetre
     $formADuser=New-Object System.Windows.Forms.Form
     $formADuser.Size = New-Object System.Drawing.Size(1100,1000)
@@ -116,7 +116,7 @@ function INFORMATIONsUSERS {
     $formADuser.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
 
     #ListView
-    $ListViewADuser = New-Object System.Windows.Forms.ListView 
+    $ListViewADuser = New-Object System.Windows.Forms.ListView
     $ListViewADuser.Location = New-Object System.Drawing.Size(600,129)
     $ListViewADuser.Size = New-Object System.Drawing.Size(435,420)
     $ListViewADuser.View = [System.Windows.Forms.View]::Details
@@ -136,7 +136,7 @@ function INFORMATIONsUSERS {
     $rechercheUserAreaGroupBox.Text = "Fiche utilisateur"
     $rechercheUserAreaGroupBox.Font = New-Object System.Drawing.Font("Arial",11,[System.Drawing.FontStyle]::Regular)
     $formADuser.Controls.Add($rechercheUserAreaGroupBox)
- 
+
     #Label NAME
     Add-Type -AssemblyName System.Windows.Forms
     $Labelname = New-Object System.Windows.Forms.Label
@@ -146,14 +146,14 @@ function INFORMATIONsUSERS {
     $Labelname.AutoSize = $false
     $Labelname.Size = New-Object System.Drawing.Size(45,20)
     $rechercheUserAreaGroupBox.Controls.Add($Labelname)
-  
+
     #TEXTBOX NAME
-    $TextboxADUuser1 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser1 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser1.Location = New-Object System.Drawing.Size(10,40)
-    $TextboxADUuser1.Size = New-Object System.Drawing.Size(190,20) 
+    $TextboxADUuser1.Size = New-Object System.Drawing.Size(190,20)
     $TextboxADUuser1.BackColor = "white"
     $TextboxADUuser1.ReadOnly = $true
-    $TextboxADUuser1.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } }) 
+    $TextboxADUuser1.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $rechercheUserAreaGroupBox.Controls.Add($TextboxADUuser1)
 
     #Label PRENOM
@@ -167,7 +167,7 @@ function INFORMATIONsUSERS {
     $rechercheUserAreaGroupBox.Controls.Add($Labelprenom)
 
     #TEXTBOX PRENOM
-    $TextboxADUuser2 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser2 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser2.Location = New-Object System.Drawing.Size(305,40)
     $TextboxADUuser2.Size = New-Object System.Drawing.Size(190,20)
     $TextboxADUuser2.BackColor = "white"
@@ -186,7 +186,7 @@ function INFORMATIONsUSERS {
     $rechercheUserAreaGroupBox.Controls.Add($Labelcatho)
 
     #TEXTBOX CATHO
-    $TextboxADUuser3 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser3 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser3.Location = New-Object System.Drawing.Size(10,100)
     $TextboxADUuser3.Size = New-Object System.Drawing.Size(190,20)
     $TextboxADUuser3.BackColor = "white"
@@ -205,12 +205,12 @@ function INFORMATIONsUSERS {
     $rechercheUserAreaGroupBox.Controls.Add($LabelMatricule)
 
     #TEXTBOX MATRICULE
-    $TextboxADUuser4 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser4 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser4.Location = New-Object System.Drawing.Size(305,100)
     $TextboxADUuser4.Size = New-Object System.Drawing.Size(190,20)
     $TextboxADUuser4.BackColor = "white"
     $TextboxADUuser4.ReadOnly = $true
-    $TextboxADUuser4.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } }) 
+    $TextboxADUuser4.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $rechercheUserAreaGroupBox.Controls.Add($TextboxADUuser4)
 
     #Label IPPHONE
@@ -224,7 +224,7 @@ function INFORMATIONsUSERS {
     $rechercheUserAreaGroupBox.Controls.Add($LabelIpphone)
 
     #TEXTBOX IPPHONE
-    $TextboxADUuser5 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser5 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser5.Location = New-Object System.Drawing.Size(10,160)
     $TextboxADUuser5.Size = New-Object System.Drawing.Size(190,20)
     $TextboxADUuser5.BackColor = "white"
@@ -243,7 +243,7 @@ function INFORMATIONsUSERS {
     $rechercheUserAreaGroupBox.Controls.Add($LabelTelephone)
 
     #TEXTBOX SDA
-    $TextboxADUuser6 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser6 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser6.Location = New-Object System.Drawing.Size(305,160)
     $TextboxADUuser6.Size = New-Object System.Drawing.Size(190,20)
     $TextboxADUuser6.BackColor = "white"
@@ -262,7 +262,7 @@ function INFORMATIONsUSERS {
     $rechercheUserAreaGroupBox.Controls.Add($LabelLOGIN)
 
     #TEXTBOX LOGIN
-    $TextboxADUuser7 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser7 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser7.Location = New-Object System.Drawing.Size(10,225)
     $TextboxADUuser7.Size = New-Object System.Drawing.Size(190,20)
     $TextboxADUuser7.BackColor = "white"
@@ -281,7 +281,7 @@ function INFORMATIONsUSERS {
     $rechercheUserAreaGroupBox.Controls.Add($LabelEXPIRACCOUNT)
 
     #TEXTBOX DATE DEXPIRATION COMPTE
-    $TextboxADUuser8 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser8 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser8.Location = New-Object System.Drawing.Size(305,225)
     $TextboxADUuser8.Size = New-Object System.Drawing.Size(190,20)
     $TextboxADUuser8.BackColor = "white"
@@ -301,7 +301,7 @@ function INFORMATIONsUSERS {
 
     #TEXTBOX MAIL
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxADUuser10 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser10 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser10.Location = New-Object System.Drawing.Size(10,295)
     $TextboxADUuser10.Size = New-Object System.Drawing.Size(240,1)
     $TextboxADUuser10.BackColor = "white"
@@ -323,7 +323,7 @@ function INFORMATIONsUSERS {
 
     #TEXTBOX "ETAT COMPTE"
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxADUuser13 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser13 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser13.Location = New-Object System.Drawing.Size(305,295)
     $TextboxADUuser13.Size = New-Object System.Drawing.Size(190,1)
     $TextboxADUuser13.BackColor = "white"
@@ -345,7 +345,7 @@ function INFORMATIONsUSERS {
 
     #TEXTBOX DESCRIPTIONS
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxADUuser9 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser9 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser9.Location = New-Object System.Drawing.Size(10,355)
     $TextboxADUuser9.Size = New-Object System.Drawing.Size(485,1)
     $TextboxADUuser9.BackColor = "white"
@@ -364,7 +364,7 @@ function INFORMATIONsUSERS {
     $formADuser.Controls.Add($LabelBarreDeRecherche)
 
     #TEXTBOX BARRE DE RECHERCHE
-    $TextboxADUuser12 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser12 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser12.Location = New-Object System.Drawing.Size(600,94)
     $TextboxADUuser12.Size = New-Object System.Drawing.Size(340,25)
     $TextboxADUuser12.Font = New-Object System.Drawing.Font("Arial",11,[System.Drawing.FontStyle]::Regular)
@@ -417,10 +417,10 @@ function INFORMATIONsUSERS {
     $LabelMembre.AutoSize = $false
     $LabelMembre.Size = New-Object System.Drawing.Size(170,20)
     $rechercheUserAreaGroupBox.Controls.Add($LabelMembre)
-          
+
     #TEXTBOX GROUPES ET BOITES MAILS
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxADUuser11 = New-Object System.Windows.Forms.TextBox 
+    $TextboxADUuser11 = New-Object System.Windows.Forms.TextBox
     $TextboxADUuser11.Location = New-Object System.Drawing.Size(10,415)
     $TextboxADUuser11.Size = New-Object System.Drawing.Size(485,165)
     $TextboxADUuser11.BackColor = "white"
@@ -432,7 +432,7 @@ function INFORMATIONsUSERS {
 
 #endregion Structure
 
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
                                                                                      #GROUPES#
 #######################################################################################################################################################################
 
@@ -458,8 +458,8 @@ function INFORMATIONsUSERS {
     $Group4.Location = New-Object System.Drawing.Size(485,780)
     $Group4.Height = 110
     $Group4.Width = 402
-  
-  #############################################    
+
+  #############################################
 
     #LABEL MODIF MATRICULE
     Add-Type -AssemblyName System.Windows.Forms
@@ -470,27 +470,27 @@ function INFORMATIONsUSERS {
     $LabelModifMatricule.AutoSize = $false
     $LabelModifMatricule.Size = New-Object System.Drawing.Size(170,20)
     $Group3.Controls.Add($LabelModifMatricule)
-    
+
     #TEXTBOX MODIF MATRICULE (LOGIN)
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxModifMatricule1 = New-Object System.Windows.Forms.TextBox 
+    $TextboxModifMatricule1 = New-Object System.Windows.Forms.TextBox
     $TextboxModifMatricule1.Location = New-Object System.Drawing.Size(10,55)
     $TextboxModifMatricule1.Size = New-Object System.Drawing.Size(170,20)
     $TextboxModifMatricule1.BackColor = "white"
     $TextboxModifMatricule1.ReadOnly = $true
     $TextboxModifMatricule1.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $Group3.Controls.Add($TextboxModifMatricule1)
- 
+
     #TEXTBOX MODIF MATRICULE (MATRICULE)
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxModifMatricule2 = New-Object System.Windows.Forms.TextBox 
+    $TextboxModifMatricule2 = New-Object System.Windows.Forms.TextBox
     $TextboxModifMatricule2.Location = New-Object System.Drawing.Size(195,55)
     $TextboxModifMatricule2.MaxLength = 5
     $TextboxModifMatricule2.Size = New-Object System.Drawing.Size(90,20)
     $TextboxModifMatricule2.BackColor = "white"
     $TextboxModifMatricule2.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $Group3.Controls.Add($TextboxModifMatricule2)
-   
+
     #BUTTONS ACTION MATRICULE
     Add-Type -AssemblyName System.Windows.Forms
     $buttonModifMatricule= New-Object System.Windows.Forms.Button
@@ -512,20 +512,20 @@ function INFORMATIONsUSERS {
     $LabelModifSDA.AutoSize = $false
     $LabelModifSDA.Size = New-Object System.Drawing.Size(170,20)
     $Group3.Controls.Add($LabelModifSDA)
-    
+
     #TEXTBOX MODIF SDA PHONE (LOGIN)
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxModifSDA1 = New-Object System.Windows.Forms.TextBox 
+    $TextboxModifSDA1 = New-Object System.Windows.Forms.TextBox
     $TextboxModifSDA1.Location = New-Object System.Drawing.Size(10,115)
     $TextboxModifSDA1.Size = New-Object System.Drawing.Size(170,20)
     $TextboxModifSDA1.BackColor = "white"
     $TextboxModifSDA1.ReadOnly = $true
     $TextboxModifSDA1.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $Group3.Controls.Add($TextboxModifSDA1)
-    
+
     #TEXTBOX MODIF SDA (SDA)
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxModifSDA2 = New-Object System.Windows.Forms.TextBox 
+    $TextboxModifSDA2 = New-Object System.Windows.Forms.TextBox
     $TextboxModifSDA2.Location = New-Object System.Drawing.Size(195,115)
     $TextboxModifSDA2.MaxLength = 10
     $TextboxModifSDA2.Size = New-Object System.Drawing.Size(90,20)
@@ -555,11 +555,11 @@ function INFORMATIONsUSERS {
     $LabelModifExtension.AutoSize = $false
     $LabelModifExtension.Size = New-Object System.Drawing.Size(170,20)
     $Group3.Controls.Add($LabelModifExtension)
-    
-  
+
+
     #TEXTBOX MODIF EXTENSION (LOGIN)
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxModifEXTENSION1 = New-Object System.Windows.Forms.TextBox 
+    $TextboxModifEXTENSION1 = New-Object System.Windows.Forms.TextBox
     $TextboxModifEXTENSION1.Location = New-Object System.Drawing.Size(10,175)
     $TextboxModifEXTENSION1.Size = New-Object System.Drawing.Size(170,20)
     $TextboxModifEXTENSION1.BackColor = "white"
@@ -567,16 +567,16 @@ function INFORMATIONsUSERS {
     $TextboxModifEXTENSION1.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $Group3.Controls.Add($TextboxModifEXTENSION1)
 
-    
+
     #TEXTBOX MODIF EXTENSION (EXTENSION)
     Add-Type -AssemblyName System.Windows.Forms
-    $TextboxModifEXTENSION2 = New-Object System.Windows.Forms.TextBox 
+    $TextboxModifEXTENSION2 = New-Object System.Windows.Forms.TextBox
     $TextboxModifEXTENSION2.Location = New-Object System.Drawing.Size(195,175)
     $TextboxModifEXTENSION2.MaxLength = 4
     $TextboxModifEXTENSION2.Size = New-Object System.Drawing.Size(90,20)
     $TextboxModifEXTENSION2.BackColor = "white"
     $TextboxModifEXTENSION2.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
-    $Group3.Controls.Add($TextboxModifEXTENSION2)  
+    $Group3.Controls.Add($TextboxModifEXTENSION2)
 
     #LABEL MODIF DATE EXPIRATION
     Add-Type -AssemblyName System.Windows.Forms
@@ -587,10 +587,10 @@ function INFORMATIONsUSERS {
     $ModifDateExpiration.AutoSize = $false
     $ModifDateExpiration.Size = New-Object System.Drawing.Size(174,20)
     $Group3.Controls.Add($ModifDateExpiration)
-     
+
     #TEXTBOX MODIF DATE EXPIRATION (LOGIN)
     Add-Type -AssemblyName System.Windows.Forms
-    $ModifDateExpiration1 = New-Object System.Windows.Forms.TextBox 
+    $ModifDateExpiration1 = New-Object System.Windows.Forms.TextBox
     $ModifDateExpiration1.Location = New-Object System.Drawing.Size(435,55)
     $ModifDateExpiration1.Size = New-Object System.Drawing.Size(170,20)
     $ModifDateExpiration1.BackColor = "white"
@@ -598,10 +598,10 @@ function INFORMATIONsUSERS {
     $ModifDateExpiration1.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $Group3.Controls.Add($ModifDateExpiration1)
 
-    
+
     #TEXTBOX MODIF DATE EXPIRATION (DATE)
     Add-Type -AssemblyName System.Windows.Forms
-    $ModifDateExpiration2 = New-Object System.Windows.Forms.TextBox 
+    $ModifDateExpiration2 = New-Object System.Windows.Forms.TextBox
     $ModifDateExpiration2.Location = New-Object System.Drawing.Size(624,55)
     $ModifDateExpiration2.MaxLength = 8
     $ModifDateExpiration2.Size = New-Object System.Drawing.Size(90,20)
@@ -609,7 +609,7 @@ function INFORMATIONsUSERS {
     $ModifDateExpiration2.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $Group3.Controls.Add($ModifDateExpiration2)
 
-   
+
     #BUTTONS ACTION MODIF DATE EXPIRATION
     Add-Type -AssemblyName System.Windows.Forms
     $ModifDateExpiration3= New-Object System.Windows.Forms.Button
@@ -634,7 +634,7 @@ function INFORMATIONsUSERS {
     $ModifActivationCompte.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $ModifActivationCompte.add_Click({ACTIVATIONCOMPTE})
     $formADuser.Controls.Add($ModifActivationCompte)
-    
+
     #BUTTONS ACTION MODIF DESACTIVATION COMPTE
     Add-Type -AssemblyName System.Windows.Forms
     $ModifDesactivationCompte= New-Object System.Windows.Forms.Button
@@ -646,7 +646,7 @@ function INFORMATIONsUSERS {
     $ModifDesactivationCompte.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formADuser.Close() } })
     $ModifDesactivationCompte.add_Click({DESACTIVATIONCOMPTE})
     $formADuser.Controls.Add($ModifDesactivationCompte)
-   
+
     #BUTTONS ACTION AJOUTER BOITE MAIL
     Add-Type -AssemblyName System.Windows.Forms
     $ModifAjouterMail= New-Object System.Windows.Forms.Button
@@ -672,26 +672,26 @@ function INFORMATIONsUSERS {
     $ModifAjouterVPN.add_Click({AJOUTVPN})
     $formADuser.Controls.Add($ModifAjouterVPN)
 
-#############################################    
+#############################################
     #AFFICHAGE GROUPE 4
     $formADuser.Controls.Add($Group4)
 
     #AFFICHAGE GROUPE 3
     $formADuser.Controls.Add($Group3)
-#############################################    
+#############################################
 
 #endregion
 
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
                                                                                 # BUTTONS + EVENEMENTS #
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
 
 #region Buttons
 
 
     #BUTTONS ADMINISTRATIF
     Add-Type -AssemblyName System.Windows.Forms
-    $buttonAdmin = New-Object System.Windows.Forms.Button   
+    $buttonAdmin = New-Object System.Windows.Forms.Button
     $buttonAdmin.Text = "Administratif"
     $buttonAdmin.Font = New-Object System.Drawing.Font("Arial",9,[System.Drawing.FontStyle]::Regular)
     $buttonAdmin.Width = 130
@@ -719,7 +719,7 @@ function INFORMATIONsUSERS {
     $buttonAdmin.add_Click({$TextboxModifSDA2.Clear()})
     $buttonAdmin.add_Click({$TextboxADUuser13.Clear()})
     $buttonAdmin.add_Click({$ModifDateExpiration1.Clear()})
-    $buttonAdmin.add_Click({$ModifDateExpiration2.Clear()}) 
+    $buttonAdmin.add_Click({$ModifDateExpiration2.Clear()})
     $buttonAdmin.add_Click({Administratif})
 
 
@@ -820,7 +820,7 @@ function INFORMATIONsUSERS {
     $buttonAdminlocked.add_Click({$ModifDateExpiration1.Clear()})
     $buttonAdminlocked.add_Click({$ModifDateExpiration2.Clear()})
     $buttonAdminlocked.add_Click({LOCKEDADMIN_PROF_PARTEN})
-    $formADuser.Controls.Add($buttonAdminlocked) 
+    $formADuser.Controls.Add($buttonAdminlocked)
 
     #BUTTONS ETUDIANTS
     Add-Type -AssemblyName System.Windows.Forms
@@ -831,7 +831,7 @@ function INFORMATIONsUSERS {
     $buttonETUDIANTS.Height = 40
     $buttonETUDIANTS.Location = New-Object System.Drawing.Size(756,615)
     $buttonETUDIANTS.Add_KeyDown({ if($_.KeyCode -eq "Escape") {$formADuser.Close()}})
-    $buttonETUDIANTS.add_Click({Etudiants})   
+    $buttonETUDIANTS.add_Click({Etudiants})
     $formADuser.Controls.Add($buttonETUDIANTS)
 
 
@@ -867,7 +867,7 @@ function INFORMATIONsUSERS {
     $buttonCLEAR.add_Click({$ModifDateExpiration1.Clear()})
     $buttonCLEAR.add_Click({$ModifDateExpiration2.Clear()})
     $formADuser.Controls.Add($buttonCLEAR)
-   
+
     #BUTTONS INFORMATIONS TOTALES
     Add-Type -AssemblyName System.Windows.Forms
     $buttonInfosTOTALES= New-Object System.Windows.Forms.Button
@@ -923,178 +923,178 @@ function INFORMATIONsUSERS {
 ##############################################
 #endregion Buttons
 
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
                                                                             # FUNCTIONS #
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
 
 #region Functions
 
 Function Administratif{
-       
-        $usersad = Get-ADUser -Filter * -SearchBase $UO -Server $Server -Properties * | Sort-Object 
-         
-        $usersad | ForEach {
-                  
-                  If($_.Surname -eq $null) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
+
+        $usersad = Get-ADUser -Filter * -SearchBase $UO -Server $Server -Properties * | Sort-Object
+
+        $usersad | ForEach-Object {
+
+                  If($null -eq $_.Surname) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
                   else {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem($_.Surname)}
-                                 
-                  If($_.GivenName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.GivenName){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.GivenName)}
-                               
-                  If($_.uidnumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.uidnumber){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.uidnumber)}
-    
-                  If($_.EmployeeID -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.EmployeeID){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.EmployeeID)}
-                                    
-                  If($_.ipphone -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.ipphone){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.ipphone)}
-             
-                  If($_.TelephoneNumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}   
-                                                 
-                  If($_.SamAccountName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}               
-                
+
+                  If($null -eq $_.TelephoneNumber){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}
+
+                  If($null -eq $_.SamAccountName){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}
+
                   If($_.AccountExpires -eq 0){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add("$(Get-Date([datetime]::FromFileTime($_.AccountExpires)) -Format "d MMM yyyy")")}
-                
-                  If($_.Description -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}  
-                                    
-                  If($_.Description -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}  
-              
-                  $ListViewADuser.Items.Add($ListViewADuserITEM)     
 
-                   }                                  
+                  If($null -eq $_.Description){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}
+
+                  If($null -eq $_.Description){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}
+
+                  $ListViewADuser.Items.Add($ListViewADuserITEM)
+
+                   }
 }
 
 
 Function Personnel {
-        
-        $usersad = Get-ADUser -Filter * -SearchBase $UO -Server $Domaine -Properties * | Sort-Object 
-         
-        $usersad | ForEach {
-                  
-                  If($_.Surname -eq $null) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
+
+        $usersad = Get-ADUser -Filter * -SearchBase $UO -Server $Domaine -Properties * | Sort-Object
+
+        $usersad | ForEach-Object {
+
+                  If($null -eq $_.Surname) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
                   else {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem($_.Surname)}
-                                    
-                  If($_.GivenName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.GivenName){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.GivenName)}
-                                   
-                  If($_.uidnumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.uidnumber){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.uidnumber)}
-                  
-                  If($_.EmployeeID -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.EmployeeID)}                 
-                                  
-                  If($_.ipphone -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.EmployeeID){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.EmployeeID)}
+
+                  If($null -eq $_.ipphone){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.ipphone)}
-                 
-                  If($_.TelephoneNumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}   
-                                                
-                  If($_.SamAccountName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}               
-                
+
+                  If($null -eq $_.TelephoneNumber){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}
+
+                  If($null -eq $_.SamAccountName){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}
+
                   If($_.AccountExpires -eq 0){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add("$(Get-Date([datetime]::FromFileTime($_.AccountExpires)) -Format "d MMM yyyy")")}
-                 
-                  If($_.Description -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}  
-                                     
-                  If($_.Description -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}  
+
+                  If($null -eq $_.Description){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}
+
+                  If($null -eq $_.Description){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}
 
                   $ListViewADuser.Items.Add($ListViewADuserITEM)
-       
+
 
                   }
 }
 
 
 Function SERVICEINFO {
-        
-        $usersad = Get-ADUser -Filter * -SearchBase $UO -Server $Domaine -Properties * | Sort-Object 
-         
-        $usersad | ForEach {
- 
-                  If($_.Surname -eq $null) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
+
+        $usersad = Get-ADUser -Filter * -SearchBase $UO -Server $Domaine -Properties * | Sort-Object
+
+        $usersad | ForEach-Object {
+
+                  If($null -eq $_.Surname) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
                   else {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem($_.Surname)}
-                   
-                  If($_.GivenName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.GivenName){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.GivenName)}
-                  
-                  If($_.uidnumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.uidnumber){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.uidnumber)}
 
-                  If($_.EmployeeID -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+                  If($null -eq $_.EmployeeID){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.EmployeeID)}
-                              
-                  If($_.ipphone -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.ipphone){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.ipphone)}
 
-                  If($_.TelephoneNumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}   
-                               
-                  If($_.SamAccountName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}               
+                  If($null -eq $_.TelephoneNumber){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}
 
-                  If($_.AccountExpires -eq 0){$ListViewADuserITEM.SubItems.Add("")}             
+                  If($null -eq $_.SamAccountName){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}
+
+                  If($_.AccountExpires -eq 0){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add("$(Get-Date([datetime]::FromFileTime($_.AccountExpires)) -Format "d MMM yyyy")")}
 
-                  If($_.Description -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}                    
+                  If($null -eq $_.Description){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}
 
-                  If($_.mail -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}  
-       
-                  $ListViewADuser.Items.Add($ListViewADuserITEM)       
+                  If($null -eq $_.mail){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}
+
+                  $ListViewADuser.Items.Add($ListViewADuserITEM)
 
                    }
 
 }
 
-Function LOCKEDADMIN_PROF_PARTEN {         
+Function LOCKEDADMIN_PROF_PARTEN {
 
 
-        $Lockedadmin = Search-ADAccount -AccountExpired -Server $Domaine | Where {($_.ObjectClass -eq 'user')} | Get-ADUser -Properties * | Sort-Object 
-     
-        $Lockedadmin | ForEach {
- 
-                  If($_.Surname -eq $null) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
+        $Lockedadmin = Search-ADAccount -AccountExpired -Server $Domaine | Where-Object {($_.ObjectClass -eq 'user')} | Get-ADUser -Properties * | Sort-Object
+
+        $Lockedadmin | ForEach-Object {
+
+                  If($null -eq $_.Surname) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
                   else {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem($_.Surname)}
-                   
-                  If($_.GivenName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.GivenName){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.GivenName)}
 
-                  If($_.uidnumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+                  If($null -eq $_.uidnumber){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.uidnumber)}
 
-                  If($_.EmployeeID -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+                  If($null -eq $_.EmployeeID){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.EmployeeID)}
-           
-                  If($_.ipphone -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.ipphone){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.ipphone)}
 
-                  If($_.TelephoneNumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}   
-                               
-                  If($_.SamAccountName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}               
+                  If($null -eq $_.TelephoneNumber){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}
+
+                  If($null -eq $_.SamAccountName){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}
 
                   If($_.AccountExpires -eq 0){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add("$(Get-Date([datetime]::FromFileTime($_.AccountExpires)) -Format "d MMM yyyy")")}
- 
-                  If($_.Description -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}                    
 
-                  If($_.Description -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}  
+                  If($null -eq $_.Description){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}
+
+                  If($null -eq $_.Description){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}
 
                   $ListViewADuser.Items.Add($ListViewADuserITEM)
-       
+
                    }
 
 }
@@ -1103,7 +1103,7 @@ Function LOCKEDADMIN_PROF_PARTEN {
 Function Etudiants {
 #FENETRE ETUDIANTS
 $formEtudiants = New-Object Windows.Forms.Form
-$formEtudiants.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formEtudiants.Close() } }) 
+$formEtudiants.Add_KeyDown({ if($_.KeyCode -eq "Escape") { $formEtudiants.Close() } })
 $formEtudiants.KeyPreview = $true
 $formEtudiants.Height = 600
 $formEtudiants.Width = 800
@@ -1111,7 +1111,7 @@ $formEtudiants.FormBorderStyle = "FixedDialog"
 $formEtudiants.MaximizeBox = $false
 $formEtudiants.MinimizeBox = $false
 $formEtudiants.StartPosition = "CenterScreen"
-$formEtudiants.FormBorderStyle = 'Fixed3D' 
+$formEtudiants.FormBorderStyle = 'Fixed3D'
 $formEtudiants.Text = "personnel"
 $formEtudiants.ShowDialog()
 
@@ -1122,82 +1122,82 @@ Function BARREDERECHERCHE {
    If($TextboxADUuser12.Text -eq ""){
     [System.Windows.Forms.MessageBox]::Show("Aucun utilisateur à rechercher.`nVeuillez saisir le 'nom' ou le 'prénom' puis cliquer sur 'Go'","ERREUR RECHERCHE",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
-}  
+    [System.Windows.Forms.MessageBoxIcon]::Error)
+}
 
-   
+
    elseif($TextboxADUuser12.Text -eq $TextboxADUuser12.Text){
-       
+
         $usersad = Get-ADUser -Filter {surname -eq $TextboxADUuser12.Text -or GivenName -eq $TextboxADUuser12.Text} -server $Domaine -Properties *
-         
-        $usersad | ForEach {
-       
-                  If($_.Surname -eq $null) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
+
+        $usersad | ForEach-Object {
+
+                  If($null -eq $_.Surname) {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem("")}
                   else {$ListViewADuserITEM = New-Object System.Windows.Forms.ListViewItem($_.Surname)}
-                   
-                  If($_.GivenName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.GivenName){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.GivenName)}
 
-                  If($_.uidnumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+                  If($null -eq $_.uidnumber){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.uidnumber)}
 
-                  If($_.EmployeeID -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+                  If($null -eq $_.EmployeeID){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.EmployeeID)}
-                
-                  If($_.ipphone -eq $null){$ListViewADuserITEM.SubItems.Add("")}
+
+                  If($null -eq $_.ipphone){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add($_.ipphone)}
 
-                  If($_.TelephoneNumber -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}   
-                               
-                  If($_.SamAccountName -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}               
+                  If($null -eq $_.TelephoneNumber){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.TelephoneNumber)}
+
+                  If($null -eq $_.SamAccountName){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.SamAccountName)}
 
                   If($_.AccountExpires -eq 0){$ListViewADuserITEM.SubItems.Add("")}
                   else {$ListViewADuserITEM.SubItems.Add("$(Get-Date([datetime]::FromFileTime($_.AccountExpires)) -Format "dd MMM yyyy")")}
 
-                  If($_.Description -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}  
-                  
-                  If($_.Description -eq $null){$ListViewADuserITEM.SubItems.Add("")}
-                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}  
+                  If($null -eq $_.Description){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.Description)}
+
+                  If($null -eq $_.Description){$ListViewADuserITEM.SubItems.Add("")}
+                  else {$ListViewADuserITEM.SubItems.Add($_.mail)}
 
                   $ListViewADuser.Items.Add($ListViewADuserITEM)
-           
+
                    }}
 
 }
 
 Function MATRICULE {
-  
+
    If($TextboxModifMatricule1.Text -eq ""){
     [System.Windows.Forms.MessageBox]::Show("Aucun utilisateur séléctionné`nVeuillez relancer votre recherche","ERREUR MATRICULE",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
-} 
-  
-   elseif($TextboxModifMatricule2.Text -eq ""){           
+    [System.Windows.Forms.MessageBoxIcon]::Error)
+}
+
+   elseif($TextboxModifMatricule2.Text -eq ""){
     [System.Windows.Forms.MessageBox]::Show("Le champ 'numéro de matricule' ne peut pas rester vide.`nVeuillez-vous reporter sur la fiche utilisateur dans Synergie","ERREUR MATRICULE",
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Error)
 
-}  
+}
 
    elseif($TextboxModifMatricule2.Text.Length -lt 5){
     [System.Windows.Forms.MessageBox]::Show("Le matricule doit obigatoirement contenir 5 caractères.`nVeuillez-vous reporter sur la fiche utilisateur dans Synergie","ERREUR MATRICULE",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
 }
 
 
    elseif($TextboxModifMatricule2.Text -notmatch "^\d+$"){
     [System.Windows.Forms.MessageBox]::Show("Le matricule doit obigatoirement contenir que des chiffres.`nVeuillez-vous reporter sur la fiche utilisateur dans Synergie","ERREUR MATRICULE",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
 }
 
 #VERIFICATION VALEUR
-  elseif((Get-ADUser -filter * -Properties EmployeeID | Select-Object EmployeeID).EmployeeID -eq $($TextboxModifMatricule2.Text)){    
+  elseif((Get-ADUser -filter * -Properties EmployeeID | Select-Object EmployeeID).EmployeeID -eq $($TextboxModifMatricule2.Text)){
     [System.Windows.Forms.MessageBox]::Show("Ce numéro de matricule est déjà affecté à un autre utilisateur.`nVeuillez-vous reporter sur la fiche utilisateur","ERREUR MATRICULE",
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Error)
@@ -1206,21 +1206,21 @@ Function MATRICULE {
    Set-ADUser -Identity "$($TextboxModifMatricule1.Text)" -EmployeeID "$($TextboxModifMatricule2.Text)" -WhatIf
     [System.Windows.Forms.MessageBox]::Show("Le matricule a été modifié avec succès.`nPour visualiser le changement, relancer la recherche de votre utilisateur.","SUCCES MATRICULE",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Information) 
+    [System.Windows.Forms.MessageBoxIcon]::Information)
 
 }}
 
 Function MODIFSDA {
-  
+
   If($TextboxModifSDA1.Text -eq ""){
     [System.Windows.Forms.MessageBox]::Show("Aucun utilisateur séléctionné.`nVeuillez relancer votre recherche.","ERREUR SDA",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
 
 }
-   
+
   elseif($TextboxModifSDA2.Text -eq ""){
-    Set-ADUser -Identity "$($TextboxModifSDA1.Text)" -OfficePhone $null   
+    Set-ADUser -Identity "$($TextboxModifSDA1.Text)" -OfficePhone $null
     [System.Windows.Forms.MessageBox]::Show("Le SDA de l'utilisateur est désormais vide.`nPour visualiser le changement, relancer la recherche de votre utilisateur.","SUCCES SDA",
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Information)
@@ -1234,13 +1234,13 @@ Function MODIFSDA {
 }
 
 #VERIFICATION VALEUR
-  elseif((Get-ADUser -filter * -Properties OfficePhone | Select-Object OfficePhone).OfficePhone -eq $($TextboxModifSDA2.Text)){    
+  elseif((Get-ADUser -filter * -Properties OfficePhone | Select-Object OfficePhone).OfficePhone -eq $($TextboxModifSDA2.Text)){
     [System.Windows.Forms.MessageBox]::Show("Il existe déja une SDA affecté à un utilsateur.","ERREUR SDA",
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Error)
 }
   elseif($TextboxModifSDA2.Text -match "^\d+$"){
-    Set-ADUser -Identity "$($TextboxModifSDA1.Text)" -OfficePhone "$($TextboxModifSDA2.Text)"    
+    Set-ADUser -Identity "$($TextboxModifSDA1.Text)" -OfficePhone "$($TextboxModifSDA2.Text)"
     [System.Windows.Forms.MessageBox]::Show("Le numéro de téléphone a été modifié avec succès.`nPour visualiser le changement, relancer la recherche de votre utilisateur.","SUCCES SDA",
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Information)
@@ -1251,18 +1251,18 @@ Function MODIFEXTENSION {
   If($TextboxModifEXTENSION1.Text -eq ""){
     [System.Windows.Forms.MessageBox]::Show("Aucun utilisateur séléctionné.`nVeuillez relancer votre recherche","ERREUR EXTENSION",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
 }
-   
+
   elseif($TextboxModifEXTENSION2.Text -eq ""){
-    Set-ADUser -Identity "$($TextboxModifEXTENSION1.Text)" -Clear ipPhone 
+    Set-ADUser -Identity "$($TextboxModifEXTENSION1.Text)" -Clear ipPhone
     [System.Windows.Forms.MessageBox]::Show("L'extension de l'utilisateur est désormais vide.`nPour visualiser le changement, relancer la recherche de votre utilisateur.","SUCCES EXTENSION",
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Information)
 
 }
 
-  elseif($TextboxModifEXTENSION2.Text -notmatch "^\d+$"){  
+  elseif($TextboxModifEXTENSION2.Text -notmatch "^\d+$"){
     [System.Windows.Forms.MessageBox]::Show("Impossible d'accueillir d'autres caractères à part des chiffres ou vide.`nVeuillez-vous reporter sur le Manager d'Avaya.","ERREUR EXTENSION",
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Error)
@@ -1271,28 +1271,28 @@ Function MODIFEXTENSION {
 
 #######################################################
 #VERIFICATION VALEUR
-  elseif((Get-ADUser -filter * -Properties ipphone | Select-Object ipphone).ipphone -eq $($TextboxModifEXTENSION2.Text)){    
+  elseif((Get-ADUser -filter * -Properties ipphone | Select-Object ipphone).ipphone -eq $($TextboxModifEXTENSION2.Text)){
     [System.Windows.Forms.MessageBox]::Show("Il existe déja une extension affecté à un utilisateur.","ERREUR EXTENSION",
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Error)
 }
 #######################################################
 
-  elseif($TextboxModifEXTENSION2.Text -match "^\d+$"){  
-    Set-ADUser -Identity "$($TextboxModifEXTENSION1.Text)" -Replace @{ipPhone="$($TextboxModifEXTENSION2.Text)"}  
+  elseif($TextboxModifEXTENSION2.Text -match "^\d+$"){
+    Set-ADUser -Identity "$($TextboxModifEXTENSION1.Text)" -Replace @{ipPhone="$($TextboxModifEXTENSION2.Text)"}
     [System.Windows.Forms.MessageBox]::Show("L'extension a été modifié avec succès.`nPour visualiser le changement, relancer la recherche de votre utilisateur.","SUCCES EXTENSION",
     [System.Windows.Forms.MessageBoxButtons]::OK,
     [System.Windows.Forms.MessageBoxIcon]::Information)
 
 }}
 
-#############################################    
+#############################################
 
 Function COMPTEEXPIRATION {
   If($ModifDateExpiration1.Text -eq ""){
     [System.Windows.Forms.MessageBox]::Show("Aucun utilisateur séléctionné.`nVeuillez relancer votre recherche","Modification date d'expiration",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
   }
 }
 
@@ -1301,14 +1301,14 @@ Function ACTIVATIONCOMPTE {
   If($ModifDateExpiration1.Text -eq ""){
     [System.Windows.Forms.MessageBox]::Show("Aucun utilisateur séléctionné.`nVeuillez relancer votre recherche"," ERREUR - Activation d'un compte",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
     }
 
-  Elseif($ModifDateExpiration1.Text -eq $ModifDateExpiration1.Text){ 
-    Enable-ADAccount -Identity $ModifDateExpiration1.Text 
+  Elseif($ModifDateExpiration1.Text -eq $ModifDateExpiration1.Text){
+    Enable-ADAccount -Identity $ModifDateExpiration1.Text
     [System.Windows.Forms.MessageBox]::Show("Le compte a été activé avec succès.`nPour visualiser le changement, relancer la recherche de votre utilisateur.","SUCCES - Activation d'un compte",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Information) 
+    [System.Windows.Forms.MessageBoxIcon]::Information)
     }
  }
 
@@ -1317,39 +1317,39 @@ Function DESACTIVATIONCOMPTE {
   If($ModifDateExpiration1.Text -eq ""){
     [System.Windows.Forms.MessageBox]::Show("Aucun utilisateur séléctionné.`nVeuillez relancer votre recherche","ERREUR - Désactivation d'un compte",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
   }
 
-  elseif($ModifDateExpiration1.Text -eq $ModifDateExpiration1.Text){   
-    Disable-ADAccount -Identity $ModifDateExpiration1.Text   
+  elseif($ModifDateExpiration1.Text -eq $ModifDateExpiration1.Text){
+    Disable-ADAccount -Identity $ModifDateExpiration1.Text
     [System.Windows.Forms.MessageBox]::Show("Le compte a été désactivé avec succès.`nPour visualiser le changement, relancer la recherche de votre utilisateur.","SUCCES - Désactivation d'un compte",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Information) 
+    [System.Windows.Forms.MessageBoxIcon]::Information)
   }
 }
 
 Function AJOUTBAL {
   [System.Windows.Forms.MessageBox]::Show("Bientôt disponible...","Ajouter Boite mails",
   [System.Windows.Forms.MessageBoxButtons]::OK,
-  [System.Windows.Forms.MessageBoxIcon]::Information) 
+  [System.Windows.Forms.MessageBoxIcon]::Information)
 }
 
 Function AJOUTVPN {
   [System.Windows.Forms.MessageBox]::Show("Bientôt disponible...","Ajouter VPN",
   [System.Windows.Forms.MessageBoxButtons]::OK,
-  [System.Windows.Forms.MessageBoxIcon]::Information) 
+  [System.Windows.Forms.MessageBoxIcon]::Information)
 }
 
 #endregion Functions
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
                                                               #AFFICHAGE INFORMATIONS USERS TEXTBOX #
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
 
 #region Affichage Informations TEXTBOX
 
     #NAME
     $ListViewADuser.add_Click({$TextboxADUuser1.text = $ListViewADuser.SelectedItems[0].SubItems[0].Text})
-   
+
     #PRENOM
     $ListViewADuser.add_Click({$TextboxADUuser2.text = $ListViewADuser.SelectedItems[0].SubItems[1].Text})
 
@@ -1357,8 +1357,8 @@ Function AJOUTVPN {
     $ListViewADuser.add_Click({$TextboxADUuser3.text = $ListViewADuser.SelectedItems[0].SubItems[2].Text})
 
     #NUMERO MATRICULE
-    $ListViewADuser.add_Click({$TextboxADUuser4.text = $ListViewADuser.SelectedItems[0].SubItems[3].Text}) 
-                                         
+    $ListViewADuser.add_Click({$TextboxADUuser4.text = $ListViewADuser.SelectedItems[0].SubItems[3].Text})
+
     #IPPHONE (EXTENSION)
     $ListViewADuser.add_Click({$TextboxADUuser5.text = $ListViewADuser.SelectedItems[0].SubItems[4].Text})
 
@@ -1374,7 +1374,7 @@ Function AJOUTVPN {
 
     #DATE EXPIRATION COMPTE
     $ListViewADuser.add_Click({$TextboxADUuser8.text = $ListViewADuser.SelectedItems[0].SubItems[7].Text})
-   
+
     #DESCRIPTION
     $ListViewADuser.add_Click({$TextboxADUuser9.text = $ListViewADuser.SelectedItems[0].SubItems[8].Text})
 
@@ -1383,9 +1383,9 @@ Function AJOUTVPN {
 
     #GROUPES TEXTBOX 1
     $ListViewADuser.add_Click({
-    $TextboxADUuser11.Text = [string]::join("`r`n",((Get-ADUser -identity ($TextboxADUuser7.Text) -Properties memberof | Select-Object memberof).memberof -replace 'CN=(.+?),(OU|DC)=.+','$1' | sort))   
-    }) 
-    
+    $TextboxADUuser11.Text = [string]::join("`r`n",((Get-ADUser -identity ($TextboxADUuser7.Text) -Properties memberof | Select-Object memberof).memberof -replace 'CN=(.+?),(OU|DC)=.+','$1' | Sort-Object))
+    })
+
     #COMPTE "ETAT COMPTE"
     $ListViewADuser.add_Click({
     $test = (Get-aduser -Identity ($TextboxADUuser7.Text) -Server $Domaine -Properties Enabled | Select-Object Enabled).enabled
@@ -1398,17 +1398,17 @@ Function AJOUTVPN {
     }})
 
 
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
     #AFFICHE CONTENU TEXTBOX
     $formADuser.controls.Add($ListViewADuser)
 
 #endregion Affichage Informations TEXTBOX
 
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
                                                                      #AFFICHAGE CONTENU GENERAL INFORMATIONS USERS
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
     $formADuser.ShowDialog()
-####################################################################################################################################################################### 
+#######################################################################################################################################################################
 }
 #endregion
 #######################################################################################################################################################################
@@ -1420,7 +1420,7 @@ function TEL {
 
 #FENETRE TEL
 $FORM_TEL = New-Object Windows.Forms.Form
-$FORM_TEL.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}}) 
+$FORM_TEL.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}})
 $FORM_TEL.KeyPreview = $true
 $FORM_TEL.Height = 250
 $FORM_TEL.Width = 500
@@ -1439,7 +1439,7 @@ $TEL_LABEL1.Size = New-Object System.Drawing.Size(275,15)
 $TEL_LABEL1.Text = "VERIFICATION NUMERO"
 $TEL_LABEL1.Font = New-Object System.Drawing.Font("Arial",11,[System.Drawing.FontStyle]::Bold)
 $TEL_LABEL1.AutoSize = $false
-$TEL_LABEL1.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}}) 
+$TEL_LABEL1.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}})
 $FORM_TEL.Controls.Add($TEL_LABEL1)
 
 #Label2 TEL
@@ -1450,17 +1450,17 @@ $TEL_LABEL2.Size = New-Object System.Drawing.Size(298,15)
 $TEL_LABEL2.Text = "Veuillez saisir l'extension ou le numéro de téléphone :"
 $TEL_LABEL2.Font = New-Object System.Drawing.Font("Arial",9,[System.Drawing.FontStyle]::Regular)
 $TEL_LABEL2.AutoSize = $false
-$TEL_LABEL2.Add_KeyDown({ if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}}) 
+$TEL_LABEL2.Add_KeyDown({ if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}})
 $FORM_TEL.Controls.Add($TEL_LABEL2)
 
 #TEXTBOX SAISI
 Add-Type -AssemblyName System.Windows.Forms
-$TEL_TEXTBOX1 = New-Object System.Windows.Forms.TextBox 
+$TEL_TEXTBOX1 = New-Object System.Windows.Forms.TextBox
 $TEL_TEXTBOX1.Location = New-Object System.Drawing.Size(30,90)
-$TEL_TEXTBOX1.Size = New-Object System.Drawing.Size(190,20) 
+$TEL_TEXTBOX1.Size = New-Object System.Drawing.Size(190,20)
 $TEL_TEXTBOX1.BackColor = "white"
 $TEL_TEXTBOX1.MaxLength = 10
-$TEL_TEXTBOX1.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}}) 
+$TEL_TEXTBOX1.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}})
 $FORM_TEL.Controls.Add($TEL_TEXTBOX1)
 
 #BUTTON REQUETE
@@ -1471,7 +1471,7 @@ $TEL_BUTTON1.Font = New-Object System.Drawing.Font("Arial",9,[System.Drawing.Fon
 $TEL_BUTTON1.Width = 90
 $TEL_BUTTON1.Height = 30
 $TEL_BUTTON1.Location = New-Object System.Drawing.Size(360,85)
-$TEL_BUTTON1.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}}) 
+$TEL_BUTTON1.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}})
 $TEL_BUTTON1.add_Click({$TEL_TEXTBOX2.Clear()})
 $TEL_BUTTON1.add_Click({TELEPHONE})
 $FORM_TEL.Controls.Add($TEL_BUTTON1)
@@ -1484,7 +1484,7 @@ $TEL_BUTTON2.Font = New-Object System.Drawing.Font("Arial",9,[System.Drawing.Fon
 $TEL_BUTTON2.Width = 90
 $TEL_BUTTON2.Height = 30
 $TEL_BUTTON2.Location = New-Object System.Drawing.Size(360,125)
-$TEL_BUTTON2.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}}) 
+$TEL_BUTTON2.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}})
 $TEL_BUTTON2.add_Click({$FORM_TEL.Close()})
 $FORM_TEL.Controls.Add($TEL_BUTTON2)
 
@@ -1496,7 +1496,7 @@ $TEL_BUTTON2.Font = New-Object System.Drawing.Font("Arial",8,[System.Drawing.Fon
 $TEL_BUTTON2.Width = 90
 $TEL_BUTTON2.Height = 30
 $TEL_BUTTON2.Location = New-Object System.Drawing.Size(360,165)
-$TEL_BUTTON2.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}}) 
+$TEL_BUTTON2.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}})
 $TEL_BUTTON2.add_Click({$FORM_TEL.Close()})
 $TEL_BUTTON2.add_Click({$form.Close()})
 $FORM_TEL.Controls.Add($TEL_BUTTON2)
@@ -1508,17 +1508,17 @@ $TEL_LABEL3.Location = New-Object System.Drawing.Size(27,130)
 $TEL_LABEL3.Size = New-Object System.Drawing.Size(275,15)
 $TEL_LABEL3.Text = "Resultat :"
 $TEL_LABEL3.AutoSize = $false
-$TEL_LABEL3.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}}) 
+$TEL_LABEL3.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}})
 $TEL_LABEL3.Font = New-Object System.Drawing.Font("Arial",9,[System.Drawing.FontStyle]::Regular)
 $FORM_TEL.Controls.Add($TEL_LABEL3)
 
 #TEXTBOX REPONSE REQUETE
 Add-Type -AssemblyName System.Windows.Forms
-$TEL_TEXTBOX2 = New-Object System.Windows.Forms.TextBox 
+$TEL_TEXTBOX2 = New-Object System.Windows.Forms.TextBox
 $TEL_TEXTBOX2.Location = New-Object System.Drawing.Size(30,155)
-$TEL_TEXTBOX2.Size = New-Object System.Drawing.Size(300,200) 
+$TEL_TEXTBOX2.Size = New-Object System.Drawing.Size(300,200)
 $TEL_TEXTBOX2.ReadOnly = $true
-$TEL_TEXTBOX2.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}}) 
+$TEL_TEXTBOX2.Add_KeyDown({if($_.KeyCode -eq "Escape"){$FORM_TEL.Close()}})
 $FORM_TEL.Controls.Add($TEL_TEXTBOX2)
 #
 ######################################################################################################################################################################
@@ -1530,43 +1530,43 @@ Function TELEPHONE {
   If($TEL_TEXTBOX1.Text -eq ""){
     [System.Windows.Forms.MessageBox]::Show("Aucun numéro séléctionné.`nVeuillez saisir une extension ou une S.D.A","ERREUR",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
-} 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
+}
 
    elseif($TEL_TEXTBOX1.Text -notmatch "^\d+$"){
     [System.Windows.Forms.MessageBox]::Show("Un numéro de téléphone ne peut pas accepter d'autres caractères à part des chiffres.","ERREUR",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
 }
 
    elseif($TEL_TEXTBOX1.Text.Length -lt 4){
     [System.Windows.Forms.MessageBox]::Show("Un numéro de téléphone peut contenir entre 4 et 10 chiffres.","ERREUR",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error) 
+    [System.Windows.Forms.MessageBoxIcon]::Error)
 }
 
-#VERIFICATION + REQUETE (EXTENSION) 
-  elseif((Get-ADUser -filter * -Properties ipphone | Select-Object ipphone).ipphone -eq $($TEL_TEXTBOX1.Text)){    
+#VERIFICATION + REQUETE (EXTENSION)
+  elseif((Get-ADUser -filter * -Properties ipphone | Select-Object ipphone).ipphone -eq $($TEL_TEXTBOX1.Text)){
   $requete1 = Get-ADUser -LDAPFilter "(Ipphone=$($TEL_TEXTBOX1.Text))"
   $TEL_TEXTBOX2.Text = "Ce numéro appartient à $($requete1.Name)"
 }
 
-#VERIFICATION + REQUETE (SDA) 
-  elseif((Get-ADUser -Filter { OfficePhone -eq $TEL_TEXTBOX1.Text})){    
-  $requete2 = (Get-ADUser -Filter { OfficePhone -eq $TEL_TEXTBOX1.Text}) 
+#VERIFICATION + REQUETE (SDA)
+  elseif((Get-ADUser -Filter { OfficePhone -eq $TEL_TEXTBOX1.Text})){
+  $requete2 = (Get-ADUser -Filter { OfficePhone -eq $TEL_TEXTBOX1.Text})
   $TEL_TEXTBOX2.Text = "Ce numéro appartient à $($requete2.Name)"
 }
 #VERIFICATION (EXTENSION)
-  elseif((Get-ADUser -filter * -Properties ipphone | Select-Object ipphone).ipphone -cnotmatch $($TEL_TEXTBOX1.Text)){  
+  elseif((Get-ADUser -filter * -Properties ipphone | Select-Object ipphone).ipphone -cnotmatch $($TEL_TEXTBOX1.Text)){
     [System.Windows.Forms.MessageBox]::Show("Aucun utilisateur à ce numéro.","ERREUR",
     [System.Windows.Forms.MessageBoxButtons]::OK,
-    [System.Windows.Forms.MessageBoxIcon]::Error)   
+    [System.Windows.Forms.MessageBoxIcon]::Error)
 }}
 
 ######################################################################################################################################################################
                                                                              # AFFICHAGE DE LA FENETRE #
 ######################################################################################################################################################################
-$FORM_TEL.ShowDialog() 
+$FORM_TEL.ShowDialog()
 ######################################################################################################################################################################
 }
 #endregion
@@ -1595,14 +1595,14 @@ function USbBOOTABLE {
 #######################################################################################################################################################################
                                                                           # FENETRES DEPLACEMENT ORDINATEUR#
 #######################################################################################################################################################################
-#region DEPLACEMENT ORDINATEUR 
+#region DEPLACEMENT ORDINATEUR
 
 function DeplacementpcDOMAIN {
   [System.Windows.Forms.MessageBox]::Show("En cours de construction...","Déplacer un ordinateur (Active Directory)",
   [System.Windows.Forms.MessageBoxButtons]::OK,
   [System.Windows.Forms.MessageBoxIcon]::Information)
 }
-#endregion 
+#endregion
 ######################################################################################################################################################################
                                                                              # BUTTONS FENETRE PRINCIPALE (FORM) #
 ######################################################################################################################################################################
@@ -1630,11 +1630,11 @@ $form.Controls.Add($button_quitter)
 #BOUTON SELECTION (MENU)
 $button_valider.add_Click({
 
-    if ($ListBox_1.SelectedIndex -eq 0) {INFORMATIONsUSERS} 
-    elseif ($ListBox_1.SelectedIndex -eq 1) {TEL}   
+    if ($ListBox_1.SelectedIndex -eq 0) {INFORMATIONsUSERS}
+    elseif ($ListBox_1.SelectedIndex -eq 1) {TEL}
     elseif ($ListBox_1.SelectedIndex -eq 2) {INSTALLSOFTWARE}
     elseif ($ListBox_1.SelectedIndex -eq 3) {USbBOOTABLE}
-    elseif ($ListBox_1.SelectedIndex -eq 4) {DeplacementpcDOMAIN} 
+    elseif ($ListBox_1.SelectedIndex -eq 4) {DeplacementpcDOMAIN}
 
 })
 #endregion
