@@ -72,6 +72,11 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
+## ✅ 🇫🇷 Qualité & Analyse / 🇬🇧 Quality & Analysis
+
+Ce script a été analysé avec [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) pour garantir la qualité du code et le respect des bonnes pratiques PowerShell.  
+This script was tested using [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) to ensure code quality and adherence to PowerShell best practices.
+
 ## 🙋 🇫🇷 Support & Contribution / 🇬🇧 Support & Contribution
 
 Les contributions sont les bienvenues !  
